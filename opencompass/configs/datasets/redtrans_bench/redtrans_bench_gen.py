@@ -47,7 +47,7 @@ for task_name in redtrans_tasks.keys():
     redtrans_datasets.append(
         dict(
             type=RedTransDataset,
-            path='wappley/redtrans_bench',
+            path='RedTransBench/redtrans_bench',
             name=f'redtrans_{task_name}',
             abbr=f"redtrans-{task_name}",
             infer_cfg=dict(
