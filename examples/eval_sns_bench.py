@@ -8,15 +8,12 @@ from mmengine.config import read_base
 
 """
 run command:
-    opencompass examples/eval_redtrans_bench.py -w outputs/redtrans_bench
+    opencompass examples/eval_sns_bench.py -w outputs/sns_bench
 """
 
 
 with read_base():
-    from opencompass.configs.datasets.redtrans_bench.redtrans_bench_gen import \
-        redtrans_datasets
-
-datasets = redtrans_datasets
+    from opencompass.configs.datasets.sns_bench.sns_bench_gen import datasets
 
 models = [
     dict(
@@ -58,7 +55,7 @@ infer = dict(
     runner=dict(
         type=LocalRunner,
         max_num_workers=32,
-        max_workers_per_gpu=1,
+        max_workers_per_gpu=2,
         task=dict(type=OpenICLInferTask),
     ),
 )
